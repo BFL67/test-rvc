@@ -4,11 +4,21 @@ import gradio as gr
 from matplotlib import pyplot as plt
 
 from rvc.lib.predictors.F0Extractor import F0Extractor
-
+from tabs.inference.inference import sup_audioext
 from assets.i18n.i18n import I18nAuto
 
 i18n = I18nAuto()
 
+def validate_upload(path):
+    if not path:
+        return gr.update(interactive=False)
+    if all((
+        path,
+        os.path.isfile(path),
+        path.lower().endswith(tuple(sup_audioext))
+    )):
+        return gr.update(interactive=True)
+    return gr.update(interactive=False)
 
 def extract_f0_curve(audio_path: str, method: str):
     print("Extracting F0 Curve...")
@@ -50,7 +60,7 @@ def f0_extractor_tab():
         choices=["crepe", "fcpe", "rmvpe"],
         value="rmvpe",
     )
-    button = gr.Button(i18n("Extract F0 Curve"))
+    button = gr.Button(i18n("Extract F0 Curve"), interactive=False)
 
     with gr.Row():
         txt_output = gr.File(label="F0 Curve", type="filepath")
@@ -63,4 +73,15 @@ def f0_extractor_tab():
             f0_method,
         ],
         outputs=[image_output, txt_output],
+    )
+
+    audio.change(
+        fn=validate_upload,
+        inputs=[audio],
+        outputs=[button],
+    )
+
+    audio.clear(
+        lambda: gr.update(interactive=False),
+        outputs=[button],
     )
