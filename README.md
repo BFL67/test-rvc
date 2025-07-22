@@ -20,8 +20,7 @@
   <a href="https://colab.research.google.com/github/iahispano/applio/blob/master/assets/Applio_NoUI.ipynb" target="_blank">🔎 Google Colab (No UI)</a>
 </p>
 
-> [!NOTE]  
-> RVC V3.2 will no longer receive frequent updates. Going forward, development will focus mainly on security patches, dependency updates, and occasional feature improvements. This is because the project is already stable and mature with limited room for further improvements. Pull requests are still welcome and will be reviewed.
+
 
 ## Introduction
 
@@ -37,8 +36,3 @@ RVC V3.2 is made possible thanks to these projects and their references:
 - [gradio-screen-recorder](https://huggingface.co/spaces/gstaff/gradio-screen-recorder) by gstaff
 - [rvc-cli](https://github.com/blaisewf/rvc-cli) by blaisewf
 
-### Contributors
-
-<a href="https://github.com/IAHispano/Applio/graphs/contributors" target="_blank">
-  <img src="https://contrib.rocks/image?repo=IAHispano/Applio" />
-</a>
