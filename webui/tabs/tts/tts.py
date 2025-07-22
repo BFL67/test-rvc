@@ -10,7 +10,7 @@ sys.path.append(now_dir)
 
 from assets.i18n.i18n import I18nAuto
 from core import run_tts_script
-from tabs.inference.inference import (
+from webui.tabs.inference.inference import (
     change_choices,
     create_folder_and_move_files,
     get_indexes,

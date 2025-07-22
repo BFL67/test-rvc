@@ -21,15 +21,15 @@ sys.path.append(now_dir)
 import rvc.lib.zluda
 
 # Import Tabs
-from tabs.inference.inference import inference_tab
-from tabs.train.train import train_tab
-from tabs.extra.extra import extra_tab
-from tabs.report.report import report_tab
-from tabs.download.download import download_tab
-from tabs.tts.tts import tts_tab
-from tabs.voice_blender.voice_blender import voice_blender_tab
-from tabs.plugins.plugins import plugins_tab
-from tabs.settings.settings import settings_tab
+from webui.tabs.inference.inference import inference_tab
+from webui.tabs.train.train import train_tab
+from webui.tabs.extra.extra import extra_tab
+from webui.tabs.report.report import report_tab
+from webui.tabs.download.download import download_tab
+from webui.tabs.tts.tts import tts_tab
+from webui.tabs.voice_blender.voice_blender import voice_blender_tab
+from webui.tabs.plugins.plugins import plugins_tab
+from webui.tabs.settings.settings import settings_tab
 
 # Run prerequisites
 from core import run_prerequisites_script
