@@ -1,9 +1,8 @@
 <p align="center">
 
-
 # RVC V3.2
 
-</div>
+</p>
 
 <p align="center">A simple, high-quality voice conversion tool, focused on ease of use and performance.</p>
 
