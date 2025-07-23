@@ -12,9 +12,9 @@ sys.path.append(now_dir)
 
 i18n = I18nAuto()
 
-recorder_js_path = os.path.join(now_dir, "tabs", "report", "recorder.js")
-main_js_path = os.path.join(now_dir, "tabs", "report", "main.js")
-record_button_js_path = os.path.join(now_dir, "tabs", "report", "record_button.js")
+recorder_js_path = os.path.join(now_dir, "webui", "tabs", "report", "recorder.js")
+main_js_path = os.path.join(now_dir, "webui", "tabs", "report", "main.js")
+record_button_js_path = os.path.join(now_dir, "webui", "tabs", "report", "record_button.js")
 
 recorder_js = pathlib.Path(recorder_js_path).read_text()
 main_js = pathlib.Path(main_js_path).read_text()
