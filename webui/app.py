@@ -65,27 +65,26 @@ my_applio = loadThemes.load_theme() or "ParityError/Interstellar"
 
 # Define Gradio interface
 with gr.Blocks(
-    theme=my_applio, title="Applio", css="footer{display:none !important}"
+    theme=my_applio, title="RVC V3.2", css="footer{display:none !important}"
 ) as Applio:
-    gr.Markdown("# Applio")
+    gr.Markdown("# RVC V3.2")
     gr.Markdown(
         i18n(
             "A simple, high-quality voice conversion tool focused on ease of use and performance."
         )
     )
-    gr.Markdown(
-        i18n(
-            "[Support](https://discord.gg/urxFjYmYYh) — [GitHub](https://github.com/IAHispano/Applio)"
-        )
-    )
-    with gr.Tab(i18n("Inference")):
-        inference_tab()
 
+    with gr.Tab(i18n("Inference")):
+        with gr.Tab(i18n("Inference")):
+            inference_tab()
+        with gr.Tab(i18n("TTS")):
+            tts_tab()
+
+    with gr.Tab(i18n("Download")):
+        download_tab()
     with gr.Tab(i18n("Training")):
         train_tab()
 
-    with gr.Tab(i18n("TTS")):
-        tts_tab()
 
     with gr.Tab(i18n("Voice Blender")):
         voice_blender_tab()
@@ -93,8 +92,7 @@ with gr.Blocks(
     with gr.Tab(i18n("Plugins")):
         plugins_tab()
 
-    with gr.Tab(i18n("Download")):
-        download_tab()
+    
 
     with gr.Tab(i18n("Report a Bug")):
         report_tab()
@@ -105,18 +103,12 @@ with gr.Blocks(
     with gr.Tab(i18n("Settings")):
         settings_tab()
 
-    gr.Markdown(
-        """
-    <div style="text-align: center; font-size: 0.9em; text-color: a3a3a3;">
-    By using Applio, you agree to comply with ethical and legal standards, respect intellectual property and privacy rights, avoid harmful or prohibited uses, and accept full responsibility for any outcomes, while Applio disclaims liability and reserves the right to amend these terms.
-    </div>
-    """
-    )
+
 
 
 def launch_gradio(server_name: str, server_port: int) -> None:
     Applio.launch(
-        favicon_path="assets/ICON.ico",
+        favicon_path="",
         share="--share" in sys.argv,
         inbrowser="--open" in sys.argv,
         server_name=server_name,
